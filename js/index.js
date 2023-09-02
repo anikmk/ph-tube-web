@@ -1,4 +1,4 @@
-let cardContainerData = []; // Store news data for sorting
+let cardContainerData = [];
 
     const handleCategory = async () => {
       const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -13,12 +13,10 @@ let cardContainerData = []; // Store news data for sorting
           button.removeAttribute('style');
         });
 
-        button.style.backgroundColor = '#007BFF';
+        button.style.backgroundColor = 'red';
         button.style.color = 'white';
-
         handleLoadNews(categoryId);
       };
-
       categories.forEach((category) => {
         console.log(category)
         const div = document.createElement('div');
@@ -42,25 +40,19 @@ let cardContainerData = []; // Store news data for sorting
     const handleLoadNews = async (categoryId) => {
       const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
       const data = await response.json();
-      cardContainerData = data.data.slice(); // Store the data for sorting
+      cardContainerData = data.data.slice();
       renderNews(cardContainerData);
     };
 
     const renderNews = (newsData) => {
       const cardContainer = document.getElementById('card-container');
       cardContainer.innerHTML = '';
-
       if (newsData.length === 0) {
-        // If newsData is empty, display "No data available" message
-        cardContainer.innerHTML = `
-        
-      
-       <div class="w-3/4 mx-auto bg-black">
+        cardContainer.innerHTML = `  
+       <div class="w-full ml-96 mt-24 bg-red-300 rounded p-12">
        <p class="text-2xl">Oops Sorry,There is no content here</p>
        <img src="img/icon.png">
-       </div>
-        
-       
+       </div>  
         `;
       } else {
         newsData.forEach((news) => {
@@ -68,12 +60,9 @@ let cardContainerData = []; // Store news data for sorting
           const randomHours = Math.floor(Math.random() * 24);
           const randomMinutes = Math.floor(Math.random() * 60);
           const randomTime = `${randomHours} hours and ${randomMinutes} minutes`;
-
-          // Use a ternary operator to conditionally display an icon
           const verifiedIcon = news.authors[0].verified
-            ? '<i class="fas fa-check-circle text-blue-700"></i>' // Icon when verified is true
-            : ''; // Empty string when verified is false
-
+            ? '<i class="fas fa-check-circle text-blue-700"></i>'
+            : '';
           div.innerHTML = `
             <div class="card bg-base-100 shadow-xl">
               <figure>
@@ -92,32 +81,23 @@ let cardContainerData = []; // Store news data for sorting
               </div>
             </div>
           `;
-
           cardContainer.appendChild(div);
         });
       }
     };
-
     const sortByViews = () => {
       const cardContainer = document.getElementById('card-container');
       const newsCards = Array.from(cardContainer.querySelectorAll('.card'));
-
-      // Sort the news cards by views
       newsCards.sort((a, b) => {
         const viewsA = parseInt(a.querySelector('.views').textContent, 10);
         const viewsB = parseInt(b.querySelector('.views').textContent, 10);
-
-        return viewsB - viewsA; // Sort in descending order
+        return viewsB - viewsA;
       });
-
-      // Clear the card container and append the sorted cards
       cardContainer.innerHTML = '';
       newsCards.forEach((card) => {
         cardContainer.appendChild(card);
       });
     };
-
-    // Example usage:
     handleLoadNews('yourCategoryId');
     handleCategory();
     handleLoadNews(1000);
