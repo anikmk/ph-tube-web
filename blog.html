@@ -9,59 +9,60 @@
 
 </head>
 <body>
-
-    <div class="join join-vertical w-3/4 ml-36 pt-48">
-        <div class="collapse collapse-arrow join-item border border-base-400">
-          <input type="radio" name="my-accordion-4"/> 
-          <div class="collapse-title text-xl font-medium bg-base-200">
-            - Discuss the scope of `var`, `let`, and `const`
-          </div>
-          <div class="collapse-content"> 
-              <strong>var:</strong>
-              <li>Function Scope: Variables declared with var are function-scoped, which means they are accessible within the function in which they are defined.</li>
-              <li>Hoisting: var declarations are hoisted to the top of their containing function or global scope. This means you can use a var variable before it is declared, although its value will be undefined until the actual declaration is reached.</li>
-              <br>
-              <strong>let:</strong>
-              <li>Block Scope: Variables declared with let are block-scoped, which means they are limited to the block or statement in which they are defined. They are not accessible outside of that block.</li>
-              <li>Hoisting: Like var, let declarations are also hoisted, but unlike var, they are not initialized with undefined. Attempting to access a let variable before its </li>
-              <br>
-              <strong>const:</strong>
-              <li>Block Scope: Variables declared with const are also block-scoped, just like let</li>
-              <li>Constant Value: const is used for variables whose values should not be reassigned after declaration. However, it's important to note that const doesn't make objects or arrays immutable; it only prevents reassignment of the variable itself. The properties of an object or elements of an array declared with const can still be modified.</li>
-           
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-base-500">
-          <input type="radio" name="my-accordion-4" /> 
-          <div class="collapse-title text-xl font-medium">
-            - Tell us the use cases of `null` and `undefined`
-          </div>
-          <div class="collapse-content"> 
-            <p>null and undefined are two special values in JavaScript that are often used to represent the absence or lack of a meaningful value, but they have slightly different use cases.</p>
-            <br> 
-            <li><strong>undefined: </strong>Uninitialized Variables that are declared but not assigned a value are automatically initialized to undefined. This can be useful when you want to declare a variable without giving it an initial value.
-            <br>
-            Function Parameters: If a function parameter is not provided with an argument, it is set to undefined. This allows you to write functions that work with optional parameters.
-            <br>Function Parameters: If a function parameter is not provided with an argument, it is set to undefined. This allows you to write functions that work with optional parameters.
-            </li>
-            <br>
-
-              <li><strong>Null: </strong>You can assign null to variables, properties, or function arguments to indicate that they are intentionally empty or without a value.
+      <div class="flex justify-center items-center h-screen">
+        <div class="join join-vertical w-4/5 mx-auto md:flex-col">
+          <div class="collapse collapse-arrow join-item border border-base-400">
+            <input type="radio" name="my-accordion-4"/> 
+            <div class="collapse-title text-xl font-medium bg-base-200">
+              - Discuss the scope of `var`, `let`, and `const`
+            </div>
+            <div class="collapse-content"> 
+                <strong>var:</strong>
+                <li>Function Scope: Variables declared with var are function-scoped, which means they are accessible within the function in which they are defined.</li>
+                <li>Hoisting: var declarations are hoisted to the top of their containing function or global scope. This means you can use a var variable before it is declared, although its value will be undefined until the actual declaration is reached.</li>
                 <br>
-                Resetting Object Properties:   You can set an object property to null to signify that it should no longer hold a reference to any object.
-                <br>Indicating Missing Values:   In cases where you need to distinguish between a variable being uninitialized (undefined) and intentionally empty (null).
-                </li>
-
-           
+                <strong>let:</strong>
+                <li>Block Scope: Variables declared with let are block-scoped, which means they are limited to the block or statement in which they are defined. They are not accessible outside of that block.</li>
+                <li>Hoisting: Like var, let declarations are also hoisted, but unlike var, they are not initialized with undefined. Attempting to access a let variable before its </li>
+                <br>
+                <strong>const:</strong>
+                <li>Block Scope: Variables declared with const are also block-scoped, just like let</li>
+                <li>Constant Value: const is used for variables whose values should not be reassigned after declaration. However, it's important to note that const doesn't make objects or arrays immutable; it only prevents reassignment of the variable itself. The properties of an object or elements of an array declared with const can still be modified.</li>
+             
+            </div>
           </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-base-500">
-          <input type="radio" name="my-accordion-4" /> 
-          <div class="collapse-title text-xl font-medium">
-            - What do you mean by REST API?
+          <div class="collapse collapse-arrow join-item border border-base-500">
+            <input type="radio" name="my-accordion-4" /> 
+            <div class="collapse-title text-xl font-medium">
+              - Tell us the use cases of `null` and `undefined`
+            </div>
+            <div class="collapse-content"> 
+              <p>null and undefined are two special values in JavaScript that are often used to represent the absence or lack of a meaningful value, but they have slightly different use cases.</p>
+              <br> 
+              <li><strong>undefined: </strong>Uninitialized Variables that are declared but not assigned a value are automatically initialized to undefined. This can be useful when you want to declare a variable without giving it an initial value.
+              <br>
+              Function Parameters: If a function parameter is not provided with an argument, it is set to undefined. This allows you to write functions that work with optional parameters.
+              <br>Function Parameters: If a function parameter is not provided with an argument, it is set to undefined. This allows you to write functions that work with optional parameters.
+              </li>
+              <br>
+  
+                <li><strong>Null: </strong>You can assign null to variables, properties, or function arguments to indicate that they are intentionally empty or without a value.
+                  <br>
+                  Resetting Object Properties:   You can set an object property to null to signify that it should no longer hold a reference to any object.
+                  <br>Indicating Missing Values:   In cases where you need to distinguish between a variable being uninitialized (undefined) and intentionally empty (null).
+                  </li>
+  
+             
+            </div>
           </div>
-          <div class="collapse-content"> 
-            <p>REST API, or Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing and interacting with web services. It is an architectural style for designing networked applications. RESTful APIs use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources, which can be thought of as objects or data in a web application.</p>
+          <div class="collapse collapse-arrow join-item border border-base-500">
+            <input type="radio" name="my-accordion-4" /> 
+            <div class="collapse-title text-xl font-medium">
+              - What do you mean by REST API?
+            </div>
+            <div class="collapse-content"> 
+              <p>REST API, or Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing and interacting with web services. It is an architectural style for designing networked applications. RESTful APIs use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources, which can be thought of as objects or data in a web application.</p>
+            </div>
           </div>
         </div>
       </div>

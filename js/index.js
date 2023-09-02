@@ -49,9 +49,9 @@ let cardContainerData = [];
       cardContainer.innerHTML = '';
       if (newsData.length === 0) {
         cardContainer.innerHTML = `  
-       <div class="w-full ml-96 mt-24 bg-red-300 rounded p-12">
+       <div class="bg-red-300 rounded text-center p-4">
        <p class="text-2xl">Oops Sorry,There is no content here</p>
-       <img src="img/icon.png">
+       <img class="mx-auto" src="img/icon.png">
        </div>  
         `;
       } else {
@@ -66,7 +66,7 @@ let cardContainerData = [];
           div.innerHTML = `
             <div class="card bg-base-100 shadow-xl">
               <figure>
-                <p class="absolute right-5 bg-black text-white p-2 rounded">${randomTime}</p>
+                <p class="absolute bg-black text-white p-2 rounded">${randomTime}</p>
                 <img src='${news.thumbnail}' alt="Shoes" class="h-48"/>
               </figure>
               <div class="card-body">
@@ -98,6 +98,6 @@ let cardContainerData = [];
         cardContainer.appendChild(card);
       });
     };
-    handleLoadNews('yourCategoryId');
+    handleLoadNews();
     handleCategory();
     handleLoadNews(1000);
